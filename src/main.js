@@ -34,15 +34,14 @@ function render(action) {
     let result = [...data]; // копируем для последующего изменения
     // @todo: использование
 
-
-    sampleTable.render(result)
+    sampleTable.render(result);
 }
 
 const sampleTable = initTable({
     tableTemplate: 'table',
     rowTemplate: 'row',
-    before: [],
-    after: []
+    before: ['search', 'header', 'filter'],
+    after: ['pagination'],
 }, render);
 
 // @todo: инициализация
