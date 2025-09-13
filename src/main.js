@@ -9,6 +9,7 @@ import {processFormData} from './lib/utils.js';
 import {initTable} from './components/table.js';
 import {initPagination} from './components/pagination.js';
 import {initSorting} from './components/sorting.js';
+import {initFiltering} from './components/filtering.js';
 // @todo: подключение
 
 // Исходные данные используемые в render()
@@ -41,6 +42,7 @@ function render(action) {
     // @todo: использование
 
     result = applyPagination(result, state, action);
+    result = applyFiltering(result, state, action);
     result = applySorting(result, state, action);
 
     sampleTable.render(result);
@@ -67,6 +69,11 @@ const applyPagination = initPagination(
 
         return el;
     },
+);
+
+const applyFiltering = initFiltering(
+    sampleTable.filter.elements,
+    {searchBySeller: indexes.sellers},
 );
 
 const applySorting = initSorting([
