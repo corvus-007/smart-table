@@ -45,7 +45,7 @@ async function render(action) {
 
     query = applySearching(query, state, action);
     query = applyFiltering(query, state, action);
-    // result = applySorting(result, state, action);
+    query = applySorting(query, state, action);
     query = applyPagination(query, state, action);
     console.log(query);
 
