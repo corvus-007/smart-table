@@ -49,35 +49,4 @@ export function initFiltering(elements) {
         updateIndexes,
         applyFiltering,
     };
-
-    // // @todo: #4.1 — заполнить выпадающие списки опциями
-    //
-    // Object.keys(indexes).forEach((elementName) => {
-    //     elements[elementName].append(
-    //         ...Object.values(indexes[elementName]).map(name => {
-    //             const optionElem = document.createElement('option');
-    //             optionElem.value = name;
-    //             optionElem.label = name;
-    //
-    //             return optionElem;
-    //         }),
-    //     );
-    // });
-    //
-    // return (data, state, action) => {
-    //     // @todo: #4.2 — обработать очистку поля
-    //
-    //     if (action && action.name === 'clear') {
-    //         const parent = action.parentElement;
-    //         const inputElem = parent.querySelector('input');
-    //         const field = action.dataset.field;
-    //
-    //         inputElem.value = '';
-    //         state[field] = '';
-    //     }
-    //
-    //     // @todo: #4.5 — отфильтровать данные используя компаратор
-    //
-    //     return data.filter(row => compare(row, state));
-    // };
 }
